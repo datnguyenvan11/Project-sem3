@@ -1,8 +1,12 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Linq;
+using System.Threading.Tasks;
 using System.Web;
 using System.Web.Mvc;
+using Firebase.Database;
+using Firebase.Database.Query;
+using Project_sem3.Models;
 
 namespace Project_sem3.Controllers
 {
@@ -15,8 +19,7 @@ namespace Project_sem3.Controllers
 
         public ActionResult About()
         {
-            ViewBag.Message = "Your application description page.";
-
+           
             return View();
         }
 
