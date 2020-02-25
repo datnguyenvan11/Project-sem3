@@ -1,7 +1,34 @@
-﻿@{
+﻿
+@{
+
     ViewBag.Title = "About";
 }
-<h2>@ViewBag.Title.</h2>
-<h3>@ViewBag.Message</h3>
+<h2>@ViewBag.Title</h2>
 
-<p>Use this area to provide additional information.</p>
+<!-- The core Firebase JS SDK is always required and must be listed first -->
+<script src="https://www.gstatic.com/firebasejs/7.9.1/firebase-app.js"></script>
+
+<!-- TODO: Add SDKs for Firebase products that you want to use
+     https://firebase.google.com/docs/web/setup#available-libraries -->
+<script src="https://www.gstatic.com/firebasejs/7.9.1/firebase-analytics.js"></script>
+
+<script>
+    // Your web app's Firebase configuration
+    var firebaseConfig = {
+        apiKey: "AIzaSyABcvrcaYZaMZqqYIoJnQ4ZPmGcuFHls6Q",
+        authDomain: "test2-ef27f.firebaseapp.com",
+        databaseURL: "https://test2-ef27f.firebaseio.com",
+        projectId: "test2-ef27f",
+        storageBucket: "test2-ef27f.appspot.com",
+        messagingSenderId: "807721864295",
+        appId: "1:807721864295:web:992f2c9631d3173b1058c2",
+        measurementId: "G-2DR74VD7ZW"
+    };
+    // Initialize Firebase
+    firebase.initializeApp(firebaseConfig);
+    var db = firebase.firestore();
+    db.collection('cafes').get().then((snapshot) => {
+        console.log(snapshot.docs);
+    })
+    firebase.analytics();
+</script>
